@@ -6,7 +6,9 @@
   "scripts": {
     "start:build": "tsc -w",
     "start:serve": "nodemon ./build/index.js",
-    "start": "concurrently npm:start:*"
+    "start": "concurrently npm:start:*",
+    "format": "node_modules/prettier",
+    "pretty": "prettier --write \"./**/*.{json,ts}\""
   },
   "keywords": [],
   "author": "",

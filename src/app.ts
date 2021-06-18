@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 
-import './controllers/auth.controller.stub'
+import './controllers/auth.controller.stub';
 import { AppRouter } from './app-router';
 
 export const app = express();

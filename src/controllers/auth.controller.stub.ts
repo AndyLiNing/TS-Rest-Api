@@ -1,11 +1,17 @@
-import { Request, Response } from 'express';
+import {NextFunction, Request, Response} from 'express';
 
-import { controller, Get } from '../annotations';
+import { Controller, Get } from '../annotations';
+import {Use} from "../annotations/use";
 
-@controller('/auth')
+@Controller('/auth')
 class AuthControllerStub {
   @Get('/login')
+  @Use(logger)
   login(req: Request, res: Response): void {
     res.send('hi there!!!');
   }
+}
+function logger(req: Request, res: Response, next: NextFunction) {
+  console.log('in logger middleware');
+  next();
 }
