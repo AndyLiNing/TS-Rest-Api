@@ -4,7 +4,7 @@
   "description": "",
   "main": "./build/index.js",
   "scripts": {
-    "launch-db": "/Users/andy/MongoDB/MongoDB_Server/bin/mongod --auth --port 27017 --dbpath /Users/andy/MongoDB/Mongodb-data",
+    "launch-db": "/Users/andy/MongoDB/MongoDB_Server/bin/mongod --auth --port=27017 --dbpath=/Users/andy/MongoDB/Mongodb-data",
     "clean": "rimraf ./build",
     "start:build": "tsc -w",
     "start:serve": "nodemon ./build/index.js",

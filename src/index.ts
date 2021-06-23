@@ -1,13 +1,11 @@
 import './utils/loadEnvsVariables';
 
 import { Server } from './server';
-import { MongoDBConnection } from './configs/database-config/mongoDB-connection';
+import { Connect } from './database/mongo-db';
 
-(() => {
-  MongoDBConnection.connectToMongoDB().subscribe(
-    (mongoose) => {
-      Server.creatServer('http');
-    },
-    (e) => console.log('db server error')
-  );
-})();
+Connect.connect().subscribe(
+  (mongoose) => {
+    Server.creatServer('http');
+  },
+  (e) => console.log('db server error')
+);
