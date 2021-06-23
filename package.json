@@ -1,12 +1,14 @@
 {
-  "name": "Rest-Api",
+  "name": "rest-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
+    "launch-db": "/Users/andy/MongoDB/MongoDB_Server/bin/mongod --auth --port 27017 --dbpath /Users/andy/MongoDB/Mongodb-data",
+    "clean": "rimraf ./build",
     "start:build": "tsc -w",
     "start:serve": "nodemon ./build/index.js",
-    "start": "concurrently npm:start:*",
+    "start": " clean & concurrently npm:start:*",
     "format": "node_modules/prettier",
     "pretty": "prettier --write \"./**/*.{json,ts}\""
   },
@@ -17,16 +19,24 @@
     "@types/body-parser": "^1.19.0",
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.12",
+    "@types/mongodb": "^3.6.18",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^15.12.2",
+    "@types/rimraf": "^3.0.0",
     "concurrently": "^6.2.0",
+    "dotenv": "^10.0.0",
     "nodemon": "^2.0.7",
     "prettier": "2.3.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.3.2"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "reflect-metadata": "^0.1.13"
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.14",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.7"
   }
 }

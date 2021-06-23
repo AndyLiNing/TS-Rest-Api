@@ -1,12 +1,12 @@
 import { Router } from 'express';
 
 export class AppRouter {
-  private static _intance: Router;
+  private static instance: Router;
 
   static get router(): Router {
-    if (!this._intance) {
-      this._intance = Router();
+    if (!this.instance) {
+      this.instance = Router();
     }
-    return this._intance;
+    return this.instance;
   }
 }

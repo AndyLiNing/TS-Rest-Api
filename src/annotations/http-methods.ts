@@ -11,8 +11,8 @@ export const Options = routeBinderFactory('options');
 export const Head = routeBinderFactory('head');
 
 function routeBinderFactory(method: HTTP_METHODS) {
-  return (route: string) => (target: Object, propertyKey: string, propertyDescriptor: PropertyDescriptorRequestHandler) => {
-    Reflect.defineMetadata(MetadataKeys.route, route, target, propertyKey);
-    Reflect.defineMetadata(MetadataKeys.method, method, target, propertyKey);
+  return (route: string) => (target: Object, targetPropertyKey: string, propertyDescriptor: PropertyDescriptorRequestHandler) => {
+    Reflect.defineMetadata(MetadataKeys.route, route, target, targetPropertyKey);
+    Reflect.defineMetadata(MetadataKeys.method, method, target, targetPropertyKey);
   };
 }
