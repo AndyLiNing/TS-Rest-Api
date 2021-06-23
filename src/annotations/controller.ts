@@ -8,7 +8,6 @@ import { RequestHandler } from 'express';
 export function Controller(routePrefix?: string): (target: Function) => void {
   return (target: Function): void => {
     Object.keys(target.prototype).forEach((targetMethodProperty) => {
-
       const routeHandler = target.prototype[targetMethodProperty];
 
       // Get routes and its handles
@@ -20,11 +19,9 @@ export function Controller(routePrefix?: string): (target: Function) => void {
 
       // Get the templates
 
-
       if (route && method) {
         AppRouter.router[method](routePrefix + route, [...middlewares], routeHandler);
       }
-
     });
   };
 }

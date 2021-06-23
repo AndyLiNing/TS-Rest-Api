@@ -1,7 +1,6 @@
-import {NextFunction, Request, Response} from 'express';
+import { Request, Response } from 'express';
 
-import {Controller, Get, Post} from '../annotations';
-import {Use} from "../annotations/use";
+import { Controller, Get, Post } from '../annotations';
 
 @Controller('/auth')
 class AuthControllerStub {
@@ -10,10 +9,8 @@ class AuthControllerStub {
     res.send('hi there!!!');
   }
 
-
   @Post('/login')
   processLogin(req: Request, res: Response): void {
     res.send(req.body);
   }
 }
-

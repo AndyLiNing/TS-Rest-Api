@@ -7,4 +7,4 @@ import { join } from 'path';
     console.log('Please add the env variables. ');
     process.exit(1);
   }
-})()
+})();
